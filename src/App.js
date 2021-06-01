@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
@@ -16,7 +18,9 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
       </form>
       {todo.text}
       <div className="buttons">
-        <button onClick={() => removeTodo(index)}>X</button>
+        <button className="btn-delete" onClick={() => removeTodo(index)}>
+          <FontAwesomeIcon icon={faTrashAlt} />
+        </button>
       </div>
     </div>
   );
