@@ -51,5 +51,6 @@ input[type=checkbox] {
 }
 
 .buttons {
-  justify-content: flex-end;
+  display: flex;
+  margin-left: auto;
 }
