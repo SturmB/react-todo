@@ -33,9 +33,18 @@ function TodoForm({ addTodo }) {
 
 function App() {
   const [todos, setTodos] = React.useState([
-    { text: "Do this thing" },
-    { text: "Then do that thing" },
-    { text: "Call your Mom" }
+    {
+      text: "Do this thing",
+      isCompleted: false
+    },
+    {
+      text: "Then do that thing",
+      isCompleted: false
+    },
+    {
+      text: "Call your Mom",
+      isCompleted: false
+    }
   ]);
 
   const addTodo = text => {
