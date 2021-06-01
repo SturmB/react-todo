@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-function Todo({ todo, index, completeTodo }) {
+function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
     <div
       className="todo"
@@ -15,9 +15,9 @@ function Todo({ todo, index, completeTodo }) {
         />
       </form>
       {todo.text}
-      {/* <div className="buttons">
-        <button onClick={() => completeTodo(index)}>Complete</button>
-      </div> */}
+      <div className="buttons">
+        <button onClick={() => removeTodo(index)}>X</button>
+      </div>
     </div>
   );
 }
@@ -86,6 +86,7 @@ function App() {
             index={index}
             todo={todo}
             completeTodo={completeTodo}
+            removeTodo={removeTodo}
           />
         ))}
         <TodoForm addTodo={addTodo} />
