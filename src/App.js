@@ -7,10 +7,17 @@ function Todo({ todo, index, completeTodo }) {
       className="todo"
       style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
     >
+      <form className="checkbox">
+        <input
+          type="checkbox"
+          onClick={() => completeTodo(index)}
+          checked={todo.isCompleted}
+        />
+      </form>
       {todo.text}
-      <div className="buttons">
+      {/* <div className="buttons">
         <button onClick={() => completeTodo(index)}>Complete</button>
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -60,7 +67,7 @@ function App() {
 
   const completeTodo = index => {
     const newTodos = [...todos];
-    newTodos[index].isCompleted = true;
+    newTodos[index].isCompleted = !newTodos[index].isCompleted;
     setTodos(newTodos);
   };
 
