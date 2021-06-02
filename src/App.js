@@ -51,15 +51,15 @@ function TodoForm({ addTodo }) {
 function App() {
   const [todos, setTodos] = React.useState([
     {
-      text: "Do this thing",
+      text: "Here is a to-do list",
       isCompleted: false
     },
     {
-      text: "Then do that thing",
+      text: "Add new tasks in the empty space below",
       isCompleted: false
     },
     {
-      text: "Call your Mom",
+      text: "And just press [Enter]",
       isCompleted: false
     }
   ]);
