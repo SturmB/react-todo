@@ -18,8 +18,8 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
       </form>
       {todo.text}
       <div className="buttons">
-        <button className="btn-delete" onClick={() => removeTodo(index)}>
-          <FontAwesomeIcon icon={faTrashAlt} />
+        <button onClick={() => removeTodo(index)}>
+          <FontAwesomeIcon icon={faTrashAlt} size="lg" className="icon-delete" />
         </button>
       </div>
     </div>
