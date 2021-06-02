@@ -3,6 +3,15 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
+/**
+ * The Task component builds the HTML for a single task.
+ * 
+ * @param  {Object} task The state of the task
+ * @param  {number} index The unique id of the task in the list
+ * @param  {Function} completeTask Callback that 'completes' a task
+ * @param  {Function} removeTask Callback that deletes a task
+ * @returns jsx for the task
+ */
 function Task({ task, index, completeTask, removeTask }) {
   return (
     <div
@@ -30,6 +39,12 @@ function Task({ task, index, completeTask, removeTask }) {
   );
 }
 
+/**
+ * Form component for adding a task.
+ * 
+ * @param  {Function} addTask Callback to add the new task
+ * @returns jsx of the simple form for adding a task
+ */
 function TaskForm({ addTask }) {
   const [value, setValue] = React.useState("");
 
@@ -52,6 +67,9 @@ function TaskForm({ addTask }) {
   );
 }
 
+/**
+ * The main component that builds the entire to-do list.
+ */
 function App() {
   const [tasks, setTodos] = React.useState([
     {
