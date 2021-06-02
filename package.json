@@ -1,6 +1,22 @@
 {
   "name": "react-todo",
   "version": "0.1.0",
+  "description": "A simple to-do list made with React",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SturmB/react-todo.git"
+  },
+  "keywords": [
+    "react",
+    "to-do"
+  ],
+  "author": "Chris McGee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SturmB/react-todo/issues"
+  },
+  "homepage": "https://github.com/SturmB/react-todo#readme",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
