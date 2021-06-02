@@ -3,41 +3,45 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
-function Todo({ todo, index, completeTodo, removeTodo }) {
+function Task({ task, index, completeTask, removeTask }) {
   return (
     <div
-      className="todo"
-      style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+      className="task"
+      style={{ textDecoration: task.isCompleted ? "line-through" : "" }}
     >
       <form className="checkbox">
         <input
           type="checkbox"
-          onClick={() => completeTodo(index)}
-          checked={todo.isCompleted}
+          onClick={() => completeTask(index)}
+          checked={task.isCompleted}
         />
       </form>
-      {todo.text}
+      {task.text}
       <div className="buttons">
-        <button onClick={() => removeTodo(index)}>
-          <FontAwesomeIcon icon={faTrashAlt} size="lg" className="icon-delete" />
+        <button onClick={() => removeTask(index)}>
+          <FontAwesomeIcon
+            icon={faTrashAlt}
+            size="lg"
+            className="icon-delete"
+          />
         </button>
       </div>
     </div>
   );
 }
 
-function TodoForm({ addTodo }) {
+function TaskForm({ addTask }) {
   const [value, setValue] = React.useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
     if (!value) return;
-    addTodo(value);
+    addTask(value);
     setValue("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="add-todo">
+    <form onSubmit={handleSubmit} className="add-task">
       <input
         type="text"
         className="input"
@@ -49,7 +53,7 @@ function TodoForm({ addTodo }) {
 }
 
 function App() {
-  const [todos, setTodos] = React.useState([
+  const [tasks, setTodos] = React.useState([
     {
       text: "Here is a to-do list",
       isCompleted: false
@@ -64,36 +68,36 @@ function App() {
     }
   ]);
 
-  const addTodo = text => {
-    const newTodos = [...todos, { text }];
-    setTodos(newTodos);
+  const addTask = text => {
+    const newTasks = [...tasks, { text }];
+    setTodos(newTasks);
   };
 
-  const completeTodo = index => {
-    const newTodos = [...todos];
-    newTodos[index].isCompleted = !newTodos[index].isCompleted;
-    setTodos(newTodos);
+  const completeTask = index => {
+    const newTasks = [...tasks];
+    newTasks[index].isCompleted = !newTasks[index].isCompleted;
+    setTodos(newTasks);
   };
 
-  const removeTodo = index => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
+  const removeTask = index => {
+    const newTasks = [...tasks];
+    newTasks.splice(index, 1);
+    setTodos(newTasks);
   };
 
   return (
     <div className="app">
-      <div className="todo-list">
-        {todos.map((todo, index) => (
-          <Todo
+      <div className="task-list">
+        {tasks.map((task, index) => (
+          <Task
             key={index}
             index={index}
-            todo={todo}
-            completeTodo={completeTodo}
-            removeTodo={removeTodo}
+            task={task}
+            completeTask={completeTask}
+            removeTask={removeTask}
           />
         ))}
-        <TodoForm addTodo={addTodo} />
+        <TaskForm addTask={addTask} />
       </div>
     </div>
   );

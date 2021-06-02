@@ -4,14 +4,14 @@
   padding: 30px;
 }
 
-.todo-list {
+.task-list {
   background: #c0c0c0;
   border-radius: 8px;
   max-width: 400px;
   padding: 10px;
 }
 
-.todo {
+.task {
   align-items: center;
   background: #fff;
   border-radius: 6px;
@@ -23,7 +23,7 @@
   padding: 6px 12px;
 }
 
-.add-todo {
+.add-task {
   align-items: center;
   background: #fff;
   border: 2px solid rgba(0, 0, 0, 0.35);
